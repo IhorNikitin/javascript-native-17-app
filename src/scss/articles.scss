@@ -1,0 +1,144 @@
+@import "vars";
+@import "mixins";
+
+.articles {
+    @include flex__column();
+}
+
+.article {
+    width: 100%;
+
+    &__poster {
+        height: 1280px;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    & img {
+        width: 100%;
+    }
+
+    &__post {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        padding: 50px 100px 200px;
+        box-sizing: border-box;
+        border-left: 4px solid #ccc;
+    }
+
+    &__title {
+        margin: 10px 0 20px;
+        font-size: 75px;
+        font-weight: bold;
+        line-height: 1.2;
+        color: $background_second_color;
+    }
+
+    &__text {
+        padding: 25px 0 70px;
+        font-size: 38px;
+    }
+
+    &__date {
+        position: absolute;
+        top: 50px;
+        left: -40px;
+        z-index: 10;
+        width: 80px;
+        padding: 15px;
+        font-size: 36px;
+        color: $font_third_color;
+        text-transform: uppercase;
+        background: $background_primary_color;
+        align-text: center;
+    }
+	
+    &__video {
+        width: 85%;
+        height: 625px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+
+    @include media("(max-width: 1920px)") {
+        &__poster {
+            height: auto;
+            overflow: none;
+        }
+
+        &__title {
+            font-size: 42px;
+        }
+
+        &__post {
+            padding: 25px 50px 100px;
+        }
+
+        &__text {
+            padding: 10px 0 40px;
+            font-size: 20px;
+        }
+
+        &__date {
+            top: 40px;
+            left: -30px;
+            width: 40px;
+            font-size: 20px;
+        }
+
+        &__video {
+            height: auto;
+            overflow: none;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        &__title {
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
+
+        &__post {
+            padding: 10px 40px 50px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__date {
+            top: 20px;
+            left: -20px;
+            width: 30px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+
+    @include media("(max-width: 768px)") {
+        &__title {
+            font-size: 18px;
+        }
+
+        &__post {
+            padding: 10px 20px 25px 40px;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__date {
+            top: 10px;
+            left: -15px;
+            width: 20px;
+            padding: 5px;
+            font-size: 14px;
+        }
+    }
+}

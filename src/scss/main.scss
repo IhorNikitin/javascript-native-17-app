@@ -1,0 +1,306 @@
+@import '../../libs/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css';
+@import "vars";
+@import "mixins";
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    color: $font_primary_color;
+    line-height: 1.5;
+    background: $background_primary_color;
+}
+
+.container {
+    width: 1900px;
+    margin: 0 auto;
+
+    @include media("(max-width: 1920px)") {
+        width: 1140px;
+    }
+
+    @include media("(max-width: 1200px)") {
+        width: 720px;
+    }
+
+    @include media("(max-width: 768px)") {
+        width: 480px;
+    }
+}
+
+.header {
+    @include flex__column();
+    width: 100%;
+    background: $background_primary_color;
+}
+
+.logo {
+    position: relative;
+    width: 720px;
+    height: 600px;
+    padding: 140px 0 0;
+    background: url('../../assets/logo/17.png') center bottom no-repeat;
+    background-size: 100% auto;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: $background_second_color;
+    }
+
+    &__heart {
+        position: absolute;
+        top: 190px;
+        left: 405px;
+        padding: 7px;
+        border-radius: 50%;
+        background: $background_primary_color;
+
+        i {
+            color: $font_third_color;
+        }
+    }
+
+    @include media("(max-width: 1920px)") {
+        width: 300px;
+        height: 200px;
+        padding: 0;
+
+        &__heart,
+        svg {
+            display: none;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        width: 150px;
+        height: 100px;
+    }
+
+    @include media("(max-width: 768px)") {
+        width: 100px;
+        height: 70px;
+    }
+}
+
+.intro {
+    width: 600px;
+    padding: 60px 0;
+    text-align: center;
+
+    p {
+        padding: 5px 0;
+    }
+
+    &__text {
+        padding: 15px 20px;
+        color: $font_second_color;
+        font-size: 36px;
+        text-transform: uppercase;
+        background: $background_second_color;
+    }
+
+    @include media("(max-width: 1920px)") {
+        width: 400px;
+        padding: 20px 0;
+
+        p {
+            padding: 2px 0;
+        }
+
+        &__text {
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        padding: 10px 0;
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+
+    @include media("(max-width: 768px)") {
+        &__text {
+            font-size: 14px;
+        }
+    }
+}
+
+.scroll {
+    width: 300px;
+    padding: 80px 0 60px;
+    text-align: center;
+
+    &__text {
+        margin: 20px 0 10px;
+        font-size: 27px;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    @include media("(max-width: 1920px)") {
+        padding: 20px 0;
+
+        &__text {
+            font-size: 17px;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        padding: 10px 0;
+
+        &__text {
+            font-size: 14px;
+        }
+    }
+
+    @include media("(max-width: 768px)") {
+        &__text {
+            font-size: 12px;
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    background: $background_second_color;
+
+    &__cont {
+        @include flex__column();
+        width: 1900px;
+        margin: 0 auto;
+    }
+
+    @include media("(max-width: 1920px)") {
+        &__cont {
+            width: 1140px;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        &__cont {
+            width: 720px;
+        }
+    }
+
+    @include media("(max-width: 768px)") {
+        &__cont {
+            width: 480px;
+        }
+    }
+}
+
+.social {
+    width: 500px;
+    padding: 20px;
+    text-align: center;
+
+    &__title {
+        margin: 60px 0 80px;
+        padding: 5px 0;
+        color: $background_second_color;
+        font-size: 36px;
+        text-transform: uppercase;
+        background: $background_primary_color;
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0 20px 170px;
+        color: $font_second_color;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    @include media("(max-width: 1920px)") {
+        width: 300px;
+        padding: 20px 10px;
+
+        &__title {
+            margin: 30px 0 40px;
+            font-size: 18px;
+        }
+
+        &__item {
+            margin: 0 10px;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        width: 200px;
+        padding: 20px 0;
+
+        &__title {
+            margin: 20px 0 30px;
+            font-size: 16px;
+        }
+
+        &__item {
+            margin: 0 3px;
+        }
+    }
+
+    @include media("(max-width: 768px)") {
+        padding: 10px 0;
+
+        &__title {
+            margin: 10px 0 20px;
+            padding: 0;
+            font-size: 12px;
+        }
+    }
+}
+
+.copyright {
+    width: 300px;
+    padding: 70px 0;
+    text-align: center;
+
+    &__text {
+        font-size: 24px;
+        color: $font_second_color;
+    }
+
+    @include media("(max-width: 1920px)") {
+        width: 150px;
+        padding: 20px 0;
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+
+    @include media("(max-width: 1200px)") {
+        width: 100px;
+        padding: 10px 0;
+
+        &__text {
+            font-size: 14px;
+        }
+    }
+
+    @include media("(max-width: 768px)") {
+        width: 100px;
+        padding: 10px 0;
+
+        &__text {
+            font-size: 11px;
+        }
+    }
+}
